@@ -1,0 +1,2 @@
+# To truly learn something you have to put it into pratice
+I am practicing the exercises spire by [think like a programmer](https://www.amazon.com/Think-Like-Programmer-Introduction-Creative/dp/1593274246/ref=sr_1_1?keywords=think+like+a+programmer&qid=1638466165&sr=8-1). 
