@@ -8,33 +8,51 @@ listToOder.forEach((list) => {
 
 function orderList(list: number[]) {
   let orderList;
+  let countSwapping = 0;
   /* one or less */
   if (list.length <= 1) console.log(list);
   else if (list.length === 2) {
     /* a pair */
-    swappingTechnique();
+    for (let i = 1; i <= list.length - 1; i++) {
+      let startIndex = i - 1;
+      let startValue = list[startIndex];
+      let endIndex = i;
+      let endValue = list[i];
+
+      swappingTechnique(startValue, startIndex, endValue, endIndex);
+    }
+    console.log(list);
   } else {
-    /* 3+ */
+    /* 3+ 
+        swap values until you don't
+        and when you gove look at the list and you don't hav eto swap values then you are finish
+    */
+    do {
+      countSwapping = 0;
+      for (let i = 1; i <= list.length - 1; i++) {
+        let startIndex = i - 1;
+        let startValue = list[startIndex];
+        let endIndex = i;
+        let endValue = list[i];
+        swappingTechnique(startValue, startIndex, endValue, endIndex);
+      }
+    } while (countSwapping != 0);
+    console.log(list);
   }
 
   /* notes
         this can be done in place or by making a new list
     */
-
-  function swappingTechnique() {
-    /* swapping technique */
-    const start = {
-      value: list[0],
-      index: 0,
-    };
-    const end = {
-      value: list[1],
-      index: 1,
-    };
-    const IsSwitchValues = start.value > end.value;
-    if (IsSwitchValues)
-      swapValues(start.value, start.index, end.value, end.index);
-    else console.log(list);
+  function resconstructionTechnique() {}
+  function swappingTechnique(
+    startValue: number,
+    startIndex: number,
+    endValue: number,
+    endIndex: number
+  ) {
+    const needToSwapValues = startValue > endValue;
+    if (needToSwapValues)
+      swapValues(startValue, startIndex, endValue, endIndex);
 
     function swapValues(
       startValue: number,
@@ -44,7 +62,7 @@ function orderList(list: number[]) {
     ) {
       list[startIndex] = endValue;
       list[endIndex] = startValue;
-      console.log(list);
+      countSwapping++;
     }
   }
 }
