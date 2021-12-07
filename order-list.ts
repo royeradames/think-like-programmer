@@ -7,7 +7,7 @@ listToOder.forEach((list) => {
 });
 
 function orderList(list: number[]) {
-  let orderList;
+  //   let orderList;
   let countSwapping = 0;
   /* one or less */
   //   if (list.length <= 1) console.log(list);
