@@ -10,35 +10,35 @@ function orderList(list: number[]) {
   let orderList;
   let countSwapping = 0;
   /* one or less */
-  if (list.length <= 1) console.log(list);
-  else if (list.length === 2) {
-    /* a pair */
+  //   if (list.length <= 1) console.log(list);
+  //   else if (list.length === 2) {
+  //     /* a pair */
+  //     for (let i = 1; i <= list.length - 1; i++) {
+  //       let startIndex = i - 1;
+  //       let startValue = list[startIndex];
+  //       let endIndex = i;
+  //       let endValue = list[i];
+  //       swappingTechnique(startValue, startIndex, endValue, endIndex);
+  //     }
+  //     console.log(list);
+  //   }
+  //   else {
+  /* 3+ 
+        - swap values until 
+        - you go through the list you didn't have to swap values
+    */
+  do {
+    countSwapping = 0;
     for (let i = 1; i <= list.length - 1; i++) {
       let startIndex = i - 1;
       let startValue = list[startIndex];
       let endIndex = i;
       let endValue = list[i];
-
       swappingTechnique(startValue, startIndex, endValue, endIndex);
     }
-    console.log(list);
-  } else {
-    /* 3+ 
-        swap values until you don't
-        and when you gove look at the list and you don't hav eto swap values then you are finish
-    */
-    do {
-      countSwapping = 0;
-      for (let i = 1; i <= list.length - 1; i++) {
-        let startIndex = i - 1;
-        let startValue = list[startIndex];
-        let endIndex = i;
-        let endValue = list[i];
-        swappingTechnique(startValue, startIndex, endValue, endIndex);
-      }
-    } while (countSwapping != 0);
-    console.log(list);
-  }
+  } while (countSwapping != 0);
+  console.log(list);
+  //   }
 
   /* notes
         this can be done in place or by making a new list
