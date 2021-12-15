@@ -42,6 +42,10 @@ function decoder(messageString: string) {
         break;
     }
   });
+
+  /* join the decoded chars into a string */
+  const decodedMessage: string = decodedMessageArray.join("");
+  return decodedMessage;
 }
 
 console.log("------------------------------------");
