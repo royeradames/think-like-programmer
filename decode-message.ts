@@ -15,6 +15,8 @@ console.log(message);
 function decoder(messageString: string) {
   /* convert the message into an array of numbers */
   const messageArray = messageString.split(",");
+  /* keep track of the message */
+  let decodedMessageArray: string[] = [];
 }
 
 console.log("------------------------------------");
