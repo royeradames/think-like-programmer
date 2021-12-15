@@ -73,6 +73,37 @@ function decoder(messageString: string) {
       return convertToAlphabet("a", rawCodeMessage);
     }
   }
+  function decodingMode(codedMessage: number) {
+    const rawCodeMessage = codedMessage % dominatorPunctuation;
+
+    /* switch to uppercase when the raw code message is 0 */
+    const changeMode = rawCodeMessage === 0;
+    if (changeMode) {
+      mode = UPPERCASE;
+      return "";
+    }
+
+    switch (rawCodeMessage) {
+      case 1:
+        return "!";
+      case 2:
+        return "?";
+      case 3:
+        return ",";
+      case 4:
+        return ".";
+      case 5:
+        return " ";
+      case 6:
+        return ";";
+      case 7:
+        return '"';
+      case 8:
+        return "'";
+      default:
+        return "";
+    }
+  }
 }
 
 console.log("------------------------------------");
