@@ -60,6 +60,19 @@ function decoder(messageString: string) {
       return convertToAlphabet("A", rawCodeMessage);
     }
   }
+  function lowercaseMode(codedMessage: number) {
+    const rawCodeMessage = codedMessage % dominatorUpperLower;
+
+    /* switch to punctuation mode if rawCodeMessage*/
+    const changeMode = rawCodeMessage === 0;
+    if (changeMode) {
+      mode = PUNCTUATION;
+      return "";
+    } else {
+      /* change the raw code message to letter and push it to the decodedMessageArray */
+      return convertToAlphabet("a", rawCodeMessage);
+    }
+  }
 }
 
 console.log("------------------------------------");
