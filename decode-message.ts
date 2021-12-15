@@ -10,7 +10,11 @@
  */
 console.log("decode-message.ts");
 const input = "18,12312,171,763,98423,1208,216,11,500,18,241,0,32,20620,27,10";
-decoder(input);
-function decoder(messageString: string) {}
+const message = decoder(input);
+console.log(message);
+function decoder(messageString: string) {
+  /* convert the message into an array of numbers */
+  const messageArray = messageString.split(",");
+}
 
 console.log("------------------------------------");
