@@ -46,6 +46,20 @@ function decoder(messageString: string) {
   /* join the decoded chars into a string */
   const decodedMessage: string = decodedMessageArray.join("");
   return decodedMessage;
+
+  function uppercaseMode(codedMessage: number) {
+    const rawCodeMessage = codedMessage % dominatorUpperLower;
+
+    /* switch to lowercase mode if rawCodeMessage*/
+    const changeMode = rawCodeMessage === 0;
+    if (changeMode) {
+      mode = LOWERCASE;
+      return "";
+    } else {
+      /* change the raw code message to letter and push it to the decodedMessageArray */
+      return convertToAlphabet("A", rawCodeMessage);
+    }
+  }
 }
 
 console.log("------------------------------------");
