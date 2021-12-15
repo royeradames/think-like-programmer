@@ -104,6 +104,16 @@ function decoder(messageString: string) {
         return "";
     }
   }
+  function convertToAlphabet(caseLetterMode: string, pickALetterCode: number) {
+    /* change the raw code message to letter and push it to the decodedMessageArray */
+    // - use CASCII alphabet
+    const accessToASCIIAlphabet = caseLetterMode.charCodeAt(0) - 1;
+    const charCode = accessToASCIIAlphabet + pickALetterCode;
+    // - convert the code into a alphabet letter
+    const char = String.fromCharCode(charCode);
+    // -push it to the codedMessageArray
+    return char;
+  }
 }
 
 console.log("------------------------------------");
