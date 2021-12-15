@@ -27,6 +27,21 @@ function decoder(messageString: string) {
   const dominatorPunctuation = 9;
   // mode keeps track of the current mode
   let mode = UPPERCASE;
+  /* loop througth the message array  and convert the codedMessageStrig(char) one by one*/
+  messageArray.forEach((codedMessageString) => {
+    const codedMessage = Number(codedMessageString);
+    switch (mode) {
+      case UPPERCASE:
+        decodedMessageArray.push(uppercaseMode(codedMessage));
+        break;
+      case LOWERCASE:
+        decodedMessageArray.push(lowercaseMode(codedMessage));
+        break;
+      case PUNCTUATION:
+        decodedMessageArray.push(decodingMode(codedMessage));
+        break;
+    }
+  });
 }
 
 console.log("------------------------------------");
