@@ -17,6 +17,16 @@ function decoder(messageString: string) {
   const messageArray = messageString.split(",");
   /* keep track of the message */
   let decodedMessageArray: string[] = [];
+  /* keep track of which mode is being use */
+  // list modes
+  const UPPERCASE = "uppercase";
+  const LOWERCASE = "lowercase";
+  const PUNCTUATION = "punctuation";
+  // denominator for decoding
+  const dominatorUpperLower = 27;
+  const dominatorPunctuation = 9;
+  // mode keeps track of the current mode
+  let mode = UPPERCASE;
 }
 
 console.log("------------------------------------");
