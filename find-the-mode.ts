@@ -9,5 +9,23 @@ function findMode(numberList: number[]) {}
 console.log("------------------------------------");
 
 /* Note:
-  
+  mode = the number that appears the most (highest frequency).
+  * Array Only solution *
+  - sort the list
+  - count the number and it's frequency.
+    - if a number has a higher frequency replace that number as the mode
+      - currentNumber
+      - currentFriquency
+      - modeNumber
+      - modeFrequency 
+  * dictionary *
+  - count the unic number appearances
+    - loop through the array and 
+    - make a object that defines the value as key and 
+    - initialize the value at 1 on first occureance or 
+      - adds +1 to the value
+  - return the higest frequencent value key
+    - loop through the object
+    - keep track of the highest frequency value key
+    - after the loop is done return the highest frequency value as the mode
  */
